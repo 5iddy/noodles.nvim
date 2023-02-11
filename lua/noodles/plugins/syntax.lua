@@ -18,4 +18,8 @@ return {
       require 'nvim-treesitter.configs'.setup(opts)
     end
   },
+  {
+    'norcalli/nvim-colorizer.lua',
+    opts = { 'html', 'css', 'vim', 'javascript', 'lua', 'vue' },
+  },
 }

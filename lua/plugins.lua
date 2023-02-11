@@ -10,17 +10,8 @@ return {
   },
   "nvim-tree/nvim-web-devicons",
   "tpope/vim-fugitive",
-  {
-    'norcalli/nvim-colorizer.lua',
-    opts = { 'html', 'css', 'vim', 'javascript', 'lua', 'vue' },
-  },
-  {
-    'goolord/alpha-nvim',
-    lazy = false,
-    config = function ()
-        require 'alpha'.setup(require'alpha.themes.startify'.config)
-    end
-  },
+  
+  
   {
     'rcarriga/nvim-notify',
     lazy = false,

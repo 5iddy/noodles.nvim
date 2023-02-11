@@ -19,3 +19,4 @@ require "noodles.config.autocmds"
 require "onedark".load()
 -- require "tokyonight".load()
 vim.cmd [[au BufWritePre * let &bex = '_' . strftime("%F.%H:%M")]]
+

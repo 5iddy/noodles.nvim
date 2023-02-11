@@ -10,6 +10,7 @@ return {
         keys = {
             { "<leader>home", "<cmd>Neotree filesystem dir=~/ toggle left<cr>", desc = "Explore Home" },
             { "<leader>pwd", "<cmd>Neotree filesystem toggle left<cr>", desc = "Explore Current Directory"},
+            { "<c-n>", "<cmd>Neotree filesystem toggle left<cr>", desc = "Explore Current Directory" },
             { "<leader>aob", "<cmd>Neotree buffers dir=~/ toggle right<cr>", desc = "All Opened Buffers"},
             { "<leader>awb", "<cmd>Neotree buffers toggle right<cr>", desc = "Currently Open Buffers in Workspace"}
         },

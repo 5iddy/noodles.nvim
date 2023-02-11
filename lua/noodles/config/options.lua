@@ -14,7 +14,7 @@ vim.opt.relativenumber = true
 vim.opt.laststatus = 2
 vim.opt.showmode = false
 
-vim.opt.signcolumn = 'number'
+vim.opt.signcolumn = 'yes:1'
 vim.opt.spell = false
 vim.opt.spelllang = { 'en_us' }
 
@@ -39,6 +39,7 @@ vim.opt.smarttab = true
 vim.opt.softtabstop = 4
 vim.opt.showtabline = 2
 vim.opt.ruler = true
+vim.opt.shiftwidth = 4
 
 vim.opt.undolevels = 100000
 vim.opt.backspace = "indent,eol,start"
