@@ -1,10 +1,6 @@
 return {
     "nvim-tree/nvim-web-devicons",
     {
-        "MunifTanjim/nui.nvim",
-        event="VeryLazy"
-    },
-    {
         'stevearc/dressing.nvim',
         event = "VeryLazy",
         config = true

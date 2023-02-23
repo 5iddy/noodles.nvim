@@ -15,7 +15,6 @@ return {
     fallback = false,
   },
   install = {
-    -- install 
     missing = true,
     colorscheme = { "nightfox", "tokyonight", "onedark" },
   },
@@ -48,19 +47,6 @@ return {
     },
     browser = "firefox", ---@type string?
     throttle = 20,
-    custom_keys = {
-      ["<localleader>l"] = function(plugin)
-        require("lazy.util").float_term({ "lazygit", "log" }, {
-          cwd = plugin.dir,
-        })
-      end,
-      -- open a terminal for the plugin dir
-      ["<localleader>t"] = function(plugin)
-        require("lazy.util").float_term(nil, {
-          cwd = plugin.dir,
-        })
-      end,
-    },
   },
   diff = {
     cmd = "git",
@@ -86,7 +72,20 @@ return {
     rtp = {
       reset = true,
       paths = {},
-      disabled_plugins = {},
+      disabled_plugins = {
+        "gzip",
+        "matchit",
+        "matchparen",
+        "netrwPlugin",
+        "tarPlugin",
+        "tohtml",
+        "tutor",
+        "zipPlugin",
+        "health",
+        "rplugin",
+        "shada",
+        "spellfile"
+      },
     },
   },
   readme = {

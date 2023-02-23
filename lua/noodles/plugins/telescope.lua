@@ -2,7 +2,8 @@ return {
     {
         'nvim-telescope/telescope.nvim',
         dependencies = {
-            'nvim-lua/plenary.nvim'
+            'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-fzy-native.nvim',
         },
         event= "VeryLazy",
         init = function ()
@@ -13,7 +14,7 @@ return {
                     name = "+find",
                     f = {
                         function ()
-                            tb.find_files()
+                            tb.find_files({hidden=true})
                         end,
                         "Find Files"
                     },
@@ -34,21 +35,31 @@ return {
                             tb.git_files()
                         end,
                         "Find Git Files"
+                    },
+                    r = {
+                        tb.oldfiles,
+                        "Find Old Files"
                     }
                 },
                 p = {
                     name = "+pick",
                     b = {
-                        function ()
-                            tb.buffers()
-                        end,
+                        tb.buffers,
                         "Pick Buffers"
+                    },
+                    c = {
+                        tb.commands,
+                        "Pick Commands"
                     }
-
                 }
             }, { prefix = "<leader>", remap = false, silent = true }
             )
         end,
-        config = true,
-    }
+        config = function ()
+            local telescope = require 'telescope'
+            telescope.setup {}
+            telescope.load_extension('fzy_native')
+
+        end
+    },
 }

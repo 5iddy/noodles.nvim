@@ -1,10 +1,20 @@
 local lspopts = {}
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+
+capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true
+}
+
+lspopts.capabilities = capabilities
 
 function lspopts.on_attach(client, buffer)
     if client.server_capabilities["documentSymbolProvider"] then
         require("nvim-navic").attach(client, buffer)
     end
+
     local opts = { buffer = buffer, silent = true, noremap = true }
+
     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
     vim.keymap.set("n", "<localleader>gdf", vim.lsp.buf.definition, opts)
     vim.keymap.set("n", "<localleader>gi", vim.lsp.buf.implementation, opts)

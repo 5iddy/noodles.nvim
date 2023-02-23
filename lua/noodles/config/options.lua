@@ -2,12 +2,12 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.mouse = 'a'
 vim.opt.hidden = true
 vim.opt.cmdheight = 1
-vim.opt.updatetime = 200
+vim.opt.updatetime = 50
 
 vim.opt.linebreak = true
 vim.opt.showbreak = '﬌'
 vim.opt.textwidth = 80
-vim.opt.colorcolumn = "+1"
+-- vim.opt.colorcolumn = "+1"
 
 vim.opt.number = true
 vim.opt.relativenumber = true
@@ -46,3 +46,6 @@ vim.opt.backspace = "indent,eol,start"
 vim.opt.encoding = "utf-8"
 vim.opt.backupcopy = "yes"
 vim.opt.conceallevel = 1
+
+require "noodles.config.neovide"
+

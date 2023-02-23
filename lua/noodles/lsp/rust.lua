@@ -4,7 +4,6 @@ function M.config()
     local lspopts = require 'noodles.lsp.opts'
     local rt = require 'rust-tools'
 
-
     local function on_attach(client, buffer)
         lspopts.on_attach(client, buffer)
         vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { noremap=true, silent=true, buffer=buffer})

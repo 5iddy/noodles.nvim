@@ -14,9 +14,8 @@ require("lazy").setup(
 require "noodles.config.options"
 require "noodles.config.keymaps"
 require "noodles.config.autocmds"
--- require "noodles.core.autocomplete"
 
-require "onedark".load()
+-- require "onedark".load()
 -- require "tokyonight".load()
 vim.cmd [[au BufWritePre * let &bex = '_' . strftime("%F.%H:%M")]]
 
