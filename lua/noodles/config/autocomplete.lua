@@ -23,27 +23,24 @@ M.mapping = {
 }
 
 M.sources = cmp.config.sources({
-        { name = 'path', keyword_length = 1 },
-        { name = 'nvim_lsp', keyword_length = 1 },
-        { name = 'nvim_lsp_signature_help', keyword_length = 1 },
-        { name = 'nvim_lua', keyword_length = 1 },
-        { name = 'buffer', keyword_length = 1 },
-        { name = 'luasnip', keyword_length = 1 },
-        { name = 'calc', keyword_length = 1 },
+        { name = 'path'},
+        { name = 'nvim_lsp' },
+        { name = 'nvim_lua'},
+        { name = 'buffer'},
+        { name = 'luasnip'},
+        { name = 'calc'},
         {
             name = 'look',
-            keyword_length = 2,
             option = { convert_case = true, loud = true }
         },
         {
             name = 'spell',
-            keyword_length = 3,
             option = { keep_all_entries = false }
         },
-        { name = 'dictionary', keyword_length = 1 },
-        { name = 'nerdfont', keyword_length = 1 },
-        { name = "emoji", keyword_length = 1 },
-        { name = 'zsh', keyword_length = 1 }
+        { name = 'dictionary'},
+        { name = 'nerdfont'},
+        { name = "emoji"},
+        { name = 'zsh'}
     })
 
 M.window = {

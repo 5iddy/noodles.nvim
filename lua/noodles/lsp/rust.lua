@@ -6,7 +6,7 @@ function M.config()
 
     local function on_attach(client, buffer)
         lspopts.on_attach(client, buffer)
-        vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { noremap=true, silent=true, buffer=buffer})
+        vim.keymap.set("n", "<C-space>", rt.hover_actions.hover_actions, { remap=false, silent=true, buffer=buffer})
     end
 
     local opts = {

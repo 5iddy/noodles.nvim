@@ -1,19 +1,22 @@
 local wk = require 'which-key'
 
-local opts = { noremap = true, silent = true }
+local opts = { remap = false, silent = true }
+local map = vim.keymap.set
 
+local unpack = unpack
 -- vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle, opts)
 -- vim.keymap.set('n', '<leader>gs', vim.cmd.Git, opts)
-wk.register({
-    ["<C-l>"] = { vim.cmd.noh, "Clear Searches" },
-    ["<C-t>"] = {
-        "<CMD>tabnew | Alpha<CR>"
-        , "Open New Tab" },
-    ["<A-Left>"] = {"<C-w>h", "Move to Left Window"},
-    ["<A-Right>"] = { "<C-w>l", "Move to Right Window"},
-    ["<A-Up>"] = { "<C-w>k", "Move to Window Up"},
-    ["<A-Down>"] = { "<C-w>j", "Move to Window Down"},
-}, opts)
+--
+
+map("n", "<C-l>", vim.cmd.noh, { desc = "Clear searches", unpack(opts) })
+map("n", "<C-t>", "<CMD>tabnew | Alpha<CR>", { desc = "Open a new alpha tab", unpack(opts) })
+
+map("n", "<A-Left>", "<C-w>h", { desc = "Move cursor to left window", unpack(opts) })
+map("n", "<A-Right>", "<C-w>l", { desc = "Move cursor to right window", unpack(opts) })
+map("n", "<A-Up>", "<C-w>k", { desc = "Move cursor to window on top", unpack(opts) })
+map("n", "<A-Down>", "<C-w>j", { desc = "Move cursor to window on bottom", unpack(opts) })
+
+-- map("n", "<>")
 
 wk.register({
     l = {
@@ -26,5 +29,4 @@ wk.register({
             "Peek Definition in Popup"
         }
     }
-}, { prefix="<localleader>", unpack(opts)})
-
+}, { prefix = "<localleader>", unpack(opts) })

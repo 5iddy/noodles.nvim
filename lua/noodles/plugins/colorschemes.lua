@@ -2,7 +2,10 @@ return {
     {
         "EdenEast/nightfox.nvim",
         lazy = false,
-        config = true
+        config = function ()
+            require 'nightfox'.setup {}
+            -- vim.cmd[[colorscheme nordfox]]
+        end
     },
     {
         'folke/tokyonight.nvim',
@@ -17,4 +20,8 @@ return {
         lazy = false,
         config=true
     },
+    {
+        '5iddy/neon-nights',
+        lazy = false
+    }
 }

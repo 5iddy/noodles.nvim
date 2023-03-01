@@ -20,6 +20,9 @@ return {
     -- Custom Status Line
     {
         'nvim-lualine/lualine.nvim',
+        dependencies = {
+            'arkav/lualine-lsp-progress'
+        },
         lazy = false,
         opts = require 'noodles.config.lualine'
     },

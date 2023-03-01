@@ -15,6 +15,7 @@ return {
   },
   {
     'norcalli/nvim-colorizer.lua',
+    event = "VeryLazy",
     opts = { 'html', 'css', 'vim', 'javascript', 'lua', 'vue' },
   },
 }

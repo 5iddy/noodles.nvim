@@ -40,4 +40,11 @@ return {
         lazy = false,
         config = true
     },
+    {
+        "RRethy/vim-illuminate",
+        lazy = false,
+        config = function ()
+            require 'illuminate'.configure {}
+        end
+    }
 }

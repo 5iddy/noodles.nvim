@@ -17,7 +17,7 @@ return {
       { 'mode', --[[separator = { left = '' }, right_padding = 2]] }
     },
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {},
+    lualine_c = { 'lsp_progress' },
     lualine_x = {'encoding', 'fileformat', 'filetype'},
     lualine_y = {'filename'},
     lualine_z = {
