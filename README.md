@@ -16,8 +16,8 @@ git clone https://github.com/5iddy/noodles.nvim ~/.config/nvim
 ```
 ## TODOs
 
-- [ ] Telescope
-- [ ] Autopairs
+- [X] Telescope
+- [X] Autopairs
 - [ ] Surround
 - [ ] Keymaps
 - [ ] Bufferline
