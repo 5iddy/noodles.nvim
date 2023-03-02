@@ -42,7 +42,7 @@ return {
     },
     {
         "RRethy/vim-illuminate",
-        lazy = false,
+        ft = { "python", "lua", "c", "rust" },
         config = function ()
             require 'illuminate'.configure {}
         end

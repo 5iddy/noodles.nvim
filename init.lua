@@ -1,13 +1,13 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+    vim.fn.system({
+        "git",
+        "clone",
+        "--filter=blob:none",
+        "https://github.com/folke/lazy.nvim.git",
+        "--branch=stable", -- latest stable release
+        lazypath,
+    })
 end
 vim.opt.rtp:prepend(lazypath)
 
@@ -15,16 +15,27 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 vim.opt.termguicolors = true
+
 local lazyopts = require "noodles.config.lazyopts"
-require("lazy").setup(
-    {
-        { import = "noodles.plugins" }
-    },
-    lazyopts
-)
+require("lazy").setup({
+    { import = "noodles.plugins" }
+}, lazyopts)
+
 require "noodles.config.options"
 require "noodles.config.keymaps"
 require "noodles.config.autocmds"
 
-vim.cmd [[au BufWritePre * let &bex = '_' . strftime("%F.%H:%M")]]
 
+local lspopts = require 'noodles.lsp.opts'
+local lspconfig = require('lspconfig')
+lspconfig.marksman.setup {
+    on_attach = lspopts.on_attach,
+    capabilities = lspopts.capabilities
+}
+
+lspconfig.clangd.setup {
+    on_attach = lspopts.on_attach,
+    capabilities = lspopts.capabilities
+}
+
+vim.cmd [[au BufWritePre * let &bex = '_' . strftime("%F.%H:%M")]]
