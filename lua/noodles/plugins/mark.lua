@@ -20,5 +20,10 @@ return {
             create_cmd('PeekOpen', peek.open, { desc='Markdown preview open' })
             create_cmd('PeekClose', peek.close, { desc = 'Markdown preview close' })
         end
+    },
+    {
+        'antonk52/markdowny.nvim',
+        ft = "markdown",
+        config = true
     }
 }

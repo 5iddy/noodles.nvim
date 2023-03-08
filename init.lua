@@ -25,17 +25,4 @@ require "noodles.config.options"
 require "noodles.config.keymaps"
 require "noodles.config.autocmds"
 
-
-local lspopts = require 'noodles.lsp.opts'
-local lspconfig = require('lspconfig')
-lspconfig.marksman.setup {
-    on_attach = lspopts.on_attach,
-    capabilities = lspopts.capabilities
-}
-
-lspconfig.clangd.setup {
-    on_attach = lspopts.on_attach,
-    capabilities = lspopts.capabilities
-}
-
 vim.cmd [[au BufWritePre * let &bex = '_' . strftime("%F.%H:%M")]]
