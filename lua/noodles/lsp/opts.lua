@@ -1,4 +1,4 @@
-local lspopts = {}
+local M = {}
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 
 capabilities.textDocument.foldingRange = {
@@ -6,9 +6,35 @@ capabilities.textDocument.foldingRange = {
     lineFoldingOnly = true
 }
 
-lspopts.capabilities = capabilities
+capabilities.offsetEncoding = { "utf-8", "utf-16" }
 
-function lspopts.on_attach(client, buffer)
+capabilities.textDocument.completion.completionItem.documentationFormat = { "markdown", "plaintext" }
+
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+capabilities.textDocument.completion.completionItem.preselectSupport = true
+
+capabilities.textDocument.completion.completionItem.insertReplaceSupport = true
+
+capabilities.textDocument.completion.completionItem.labelDetailsSupport = true
+
+capabilities.textDocument.completion.completionItem.deprecatedSupport = true
+
+capabilities.textDocument.completion.completionItem.commitCharactersSupport = true
+
+capabilities.textDocument.completion.completionItem.tagSupport = { valueSet = { 1 } }
+
+capabilities.textDocument.completion.completionItem.resolveSupport = {
+    properties = {
+        "documentation",
+        "detail",
+        "additionalTextEdits",
+    },
+}
+
+M.capabilities = capabilities
+
+function M.on_attach(client, buffer)
     if client.server_capabilities["documentSymbolProvider"] then
         require("nvim-navic").attach(client, buffer)
     end
@@ -49,6 +75,13 @@ function lspopts.on_attach(client, buffer)
         end,
         group = diag_float_grp,
     })
+    vim.api.nvim_create_autocmd("LspAttach", {
+        callback = function(args)
+            local bufnr = args.buf
+            local lsp_sig_config = require 'noodles.config.lsp_signature'
+            require 'lsp_signature'.on_attach(lsp_sig_config.opts, bufnr)
+        end,
+    })
 end
 
-return lspopts
+return M

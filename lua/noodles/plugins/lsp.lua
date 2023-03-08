@@ -2,7 +2,8 @@ return {
     {
         "neovim/nvim-lspconfig",
         dependencies = {
-            "glepnir/lspsaga.nvim"
+            "glepnir/lspsaga.nvim",
+            'ray-x/lsp_signature.nvim'
         }
     },
     {
