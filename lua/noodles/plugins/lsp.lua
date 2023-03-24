@@ -23,8 +23,27 @@ return {
                 on_attach = lspopts.on_attach,
                 settings = {
                     Lua = {
+                        runtime = {
+                            version = 'LuaJIT',
+                            path = {
+                                '?/rc.lua',
+                            }
+                        },
+                        workspace = {
+                            library = {
+                                '/usr/share/awesome/lib'
+                            }
+                        },
                         completion = {
+                            enable = true,
                             callSnippet = "Replace"
+                        },
+                        diagnostics = {
+                            enable = true,
+                            globals = { 'vim', 'awesome', 'client', 'root', 'screen' }
+                        },
+                        telemetry = {
+                            enable = false
                         }
                     }
                 }
