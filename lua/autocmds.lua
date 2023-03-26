@@ -2,7 +2,7 @@ local autocmd = vim.api.nvim_create_autocmd
 local map = vim.keymap.set
 local unpack = unpack
 local opts = { remap = false, silent = true }
-local lspopts = require 'noodles.lsp.opts'
+local lspopts = require 'lsp.opts'
 
 
 autocmd("BufRead", {

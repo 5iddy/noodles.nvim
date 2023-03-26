@@ -47,5 +47,5 @@ vim.opt.encoding = "utf-8"
 vim.opt.backupcopy = "yes"
 vim.opt.conceallevel = 1
 
-require "noodles.config.neovide"
+require "config.neovide"
 

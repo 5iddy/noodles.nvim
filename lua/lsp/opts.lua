@@ -78,7 +78,7 @@ function M.on_attach(client, buffer)
     vim.api.nvim_create_autocmd("LspAttach", {
         callback = function(args)
             local bufnr = args.buf
-            local lsp_sig_config = require 'noodles.config.lsp_signature'
+            local lsp_sig_config = require 'lsp_signature'
             require 'lsp_signature'.on_attach(lsp_sig_config.opts, bufnr)
         end,
     })

@@ -26,7 +26,7 @@ return{
             },
         },
         opts = function ()
-            local options = require 'noodles.config.autocomplete'
+            local options = require 'config.autocomplete'
             return options
         end
     },

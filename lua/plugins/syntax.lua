@@ -9,7 +9,7 @@ return {
       { "gnb", desc = "Schrink selection", mode = "x" },
     },
     config = function ()
-      local opts = require 'noodles/config/nvim-treesitter'
+      local opts = require 'config/nvim-treesitter'
       require 'nvim-treesitter.configs'.setup(opts)
     end
   },

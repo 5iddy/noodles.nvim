@@ -15,7 +15,7 @@ return {
             { "<leader>ebh", "<cmd>Neotree buffers dir=~/ toggle right<cr>", desc = "All Opened Buffers"},
             { "<leader>ebc", "<cmd>Neotree buffers toggle right<cr>", desc = "Currently Open Buffers in Workspace"}
         },
-        config = require 'noodles.config.neotree'.setup
+        config = require 'config.neotree'.setup
     },
     -- Custom Status Line
     {
@@ -24,7 +24,7 @@ return {
             'arkav/lualine-lsp-progress'
         },
         lazy = false,
-        opts = require 'noodles.config.lualine'
+        opts = require 'config.lualine'
     },
     -- {{{
     {
@@ -55,6 +55,6 @@ return {
                 config = true
             }
         },
-        opts = require 'noodles.config.bufferline'
+        opts = require 'config.bufferline'
     }
 }

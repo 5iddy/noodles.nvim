@@ -6,6 +6,6 @@ return {
         'mfussenegger/nvim-dap',
         'nvim-lua/plenary.nvim'
     },
-    config = require 'noodles/lsp/rust'.config
+    config = require 'lsp/rust'.config
   },
 }

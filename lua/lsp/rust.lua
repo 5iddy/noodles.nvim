@@ -1,7 +1,7 @@
 local M = {}
 
 function M.config()
-    local lspopts = require 'noodles.lsp.opts'
+    local lspopts = require 'lsp.opts'
     local rt = require 'rust-tools'
     local rtdap = require 'rust-tools.dap'
     local function on_attach(client, buffer)

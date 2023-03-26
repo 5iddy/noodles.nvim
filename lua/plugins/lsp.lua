@@ -17,7 +17,7 @@ return {
             require "neodev".setup {}
             -- then setup your lsp server as usual
             local lspconfig = require('lspconfig')
-            local lspopts = require 'noodles.lsp.opts'
+            local lspopts = require 'lsp.opts'
             lspconfig.lua_ls.setup({
                 capabilities = lspopts.capabilities,
                 on_attach = lspopts.on_attach,

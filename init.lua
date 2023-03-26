@@ -16,13 +16,13 @@ vim.g.maplocalleader = "\\"
 
 vim.opt.termguicolors = true
 
-local lazyopts = require "noodles.config.lazyopts"
+local lazyopts = require "config.lazyopts"
 require("lazy").setup({
-    { import = "noodles.plugins" }
+	{ import = "plugins" }
 }, lazyopts)
 
-require "noodles.config.options"
-require "noodles.config.keymaps"
-require "noodles.config.autocmds"
+require "options"
+require "keymaps"
+require "autocmds"
 
 vim.cmd [[au BufWritePre * let &bex = '_' . strftime("%F.%H:%M")]]
