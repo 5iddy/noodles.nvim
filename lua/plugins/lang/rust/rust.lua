@@ -1,6 +1,4 @@
-local M = {}
-
-function M.config()
+local function config()
     local lspopts = require 'lsp.opts'
     local rt = require 'rust-tools'
     local rtdap = require 'rust-tools.dap'
@@ -50,4 +48,14 @@ function M.config()
     rt.setup(opts)
 end
 
-return M
+return {
+  {
+    'simrat39/rust-tools.nvim',
+    ft = "rust",
+    dependencies = {
+        'mfussenegger/nvim-dap',
+        'nvim-lua/plenary.nvim'
+    },
+    config = config
+  },
+}

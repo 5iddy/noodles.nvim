@@ -1,7 +1,7 @@
 return {
     {
         'navarasu/onedark.nvim',
-        lazy = false,
+        lazy=false,
         config=function ()
             local onedark = require 'onedark'
             local opts = {}

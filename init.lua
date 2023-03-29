@@ -18,11 +18,23 @@ vim.opt.termguicolors = true
 
 local lazyopts = require "config.lazyopts"
 require("lazy").setup({
-	{ import = "plugins" }
+        { import = "plugins.core" },
+        { import = "plugins.sugar" },
+        { import = "plugins.code" },
+        { import = "plugins.editor" },
+        { import = "plugins.lang.markdown" },
+        { import = "plugins.lang.rust" },
+        -- TODO: Add support for Awesome WM in lua config
+        { import = "plugins.lang.lua" }
+        -- TODO: Add support for python
+        -- TODO: Add support for julia
+        -- TODO: Add support for c/c++
+        -- TODO: Add support for sh/bash/zsh
 }, lazyopts)
 
-require "options"
-require "keymaps"
-require "autocmds"
+for _, value in pairs({ "options", "keymaps", "autocmds" }) do
+    require(value)
+end
+
 
 vim.cmd [[au BufWritePre * let &bex = '_' . strftime("%F.%H:%M")]]

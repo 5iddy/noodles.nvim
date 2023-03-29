@@ -1,5 +1,3 @@
-local wk = require 'which-key'
-
 local opts = { remap = false, silent = true }
 local map = vim.keymap.set
 
@@ -16,17 +14,9 @@ map("n", "<A-Right>", "<C-w>l", { desc = "Move cursor to right window", unpack(o
 map("n", "<A-Up>", "<C-w>k", { desc = "Move cursor to window on top", unpack(opts) })
 map("n", "<A-Down>", "<C-w>j", { desc = "Move cursor to window on bottom", unpack(opts) })
 
--- map("n", "<>")
+-- lsp saga
+map("n", "<localleader>lf", "<CMD>Lspsaga lsp_finder<CR>", { desc = "Find References, Definition and Implementation", unpack(opts) })
+map("n", "<localleader>ld", "<CMD>Lspsaga peek_definition<CR>", { desc = "Peek Definition in Popup", unpack(opts) })
 
-wk.register({
-    l = {
-        f = {
-            "<CMD>Lspsaga lsp_finder<CR>",
-            "Find References, Definition and Implementation"
-        },
-        d = {
-            "<CMD>Lspsaga peek_definition<CR>",
-            "Peek Definition in Popup"
-        }
-    }
-}, { prefix = "<localleader>", unpack(opts) })
+map('n', '<leader>bb', '<CMD>BufferLinePick<CR>', { desc= "Pick Buffer Line Tab", unpack(opts)})
+map('n', '<leader>bc', '<CMD>BufferLinePickClose<CR>', { desc= "Pick Buffer Line Tab Close", unpack(opts)})

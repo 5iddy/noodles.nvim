@@ -35,14 +35,10 @@ return {
     },
     incremental_selection = {
         enable = false,
-        keymaps = {
-          init_selection = "gnn",
-          node_incremental = "gni",
-          scope_incremental = "gns",
-          node_decremental = "gnb",
-       },
     },
-    ident = { enable = true },
+    ident = {
+        enable = true
+    },
     rainbow = {
         enable = true,
         extended_mode = true,
